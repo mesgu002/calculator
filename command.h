@@ -23,7 +23,7 @@ class OpCommand : public Command {
         int number;
 
     public:
-        OpCommand(num) : number(num) { }
+        OpCommand(int num) : number(num) { };
 
     
 };
@@ -35,7 +35,7 @@ class AddCommand : public Command {
         Command* node1;
 
     public:
-        AddCommand(child1, num) : node1(child1), number(num) { }
+        AddCommand(Command* child1,int num) : node1(child1), number(num) { };
 
 };
 
@@ -46,7 +46,7 @@ class SubCommand : public Command {
         Command* node1;
 
     public:
-        SubCommand(child1, num) : node1(child1), number(num) { }
+        SubCommand(Command* child1,int num) : node1(child1), number(num) { };
 
 };
 
@@ -57,7 +57,7 @@ class MultCommand : public Command {
         Command* node1;
 
     public:
-        MultCommand(child1, num) : node1(child1), number(num) { }
+        MultCommand(Command* child1,int num) : node1(child1), number(num) { };
 
 };
 
@@ -68,7 +68,7 @@ class SqrCommand : public Command {
         Command* node1;
 
     public:
-        SqrCommand(child1, num) : node1(child1), number(num) { }
+        SqrCommand(Command* child1,int num) : node1(child1), number(num) { };
 };
 
 #endif //__COMMAND_CLASS__
