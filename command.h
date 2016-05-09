@@ -19,22 +19,56 @@ class Command {
 
 class OpCommand : public Command {
 	//OpCommand Code Here
+    private:
+        int number;
+
+    public:
+        OpCommand(num) : number(num) { }
+
+    
 };
 
 class AddCommand : public Command {
 	//AddCommand Code Here
+    private:
+        int number;
+        Command* node1;
+
+    public:
+        AddCommand(child1, num) : node1(child1), number(num) { }
+
 };
 
 class SubCommand : public Command {
 	//SubCommand Code Here
+    private:
+        int number;
+        Command* node1;
+
+    public:
+        SubCommand(child1, num) : node1(child1), number(num) { }
+
 };
 
 class MultCommand : public Command {
 	//MultCommand Code Here
+    private:
+        int number;
+        Command* node1;
+
+    public:
+        MultCommand(child1, num) : node1(child1), number(num) { }
+
 };
 
 class SqrCommand : public Command {
 	//SqrCommand Code Here
+    private:
+        int number:
+        Command* node1;
+
+    public:
+        SqrCommand(child1, num) : node1(child1), number(num) { }
 };
 
 #endif //__COMMAND_CLASS__
