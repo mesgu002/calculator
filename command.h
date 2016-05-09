@@ -19,56 +19,43 @@ class Command {
 
 class OpCommand : public Command {
 	//OpCommand Code Here
-    private:
-        int number;
-
-    public:
-        OpCommand(int num) : number(num) { };
-
+    OpCommand(Command* cmd)
+    {
+        root = new UnaryOperator(cmd);
+    }
     
 };
 
 class AddCommand : public Command {
 	//AddCommand Code Here
-    private:
-        int number;
-        Command* node1;
-
-    public:
-        AddCommand(Command* child1,int num) : node1(child1), number(num) { };
-
+    AddCommand( Command* cmd, int num)
+    {
+        root = new Add(cmd->get_root(), num);
+    }
 };
 
 class SubCommand : public Command {
 	//SubCommand Code Here
-    private:
-        int number;
-        Command* node1;
-
-    public:
-        SubCommand(Command* child1,int num) : node1(child1), number(num) { };
-
+    SubCommand( Command* cmd, int num)
+    {
+        root = new Sub(cmd->get_root(), num);
+    }
 };
 
 class MultCommand : public Command {
 	//MultCommand Code Here
-    private:
-        int number;
-        Command* node1;
-
-    public:
-        MultCommand(Command* child1,int num) : node1(child1), number(num) { };
-
+    MultCommand( Command* cmd, int num)
+    {
+        root = new Mult(cmd->get_root(), num);
+    }
 };
 
 class SqrCommand : public Command {
 	//SqrCommand Code Here
-    private:
-        int number:
-        Command* node1;
-
-    public:
-        SqrCommand(Command* child1,int num) : node1(child1), number(num) { };
+    SqrCommand( Command* cmd, int num)
+    {
+        root = new Sqr(cmd->get_root());
+    }
 };
 
 #endif //__COMMAND_CLASS__
