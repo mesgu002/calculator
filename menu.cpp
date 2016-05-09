@@ -6,6 +6,7 @@ using namespace std;
 void Menu::execute() {
     if(history.at(history_index)->evaluate() != 0) {
         this->execute();
+        ++history_index;
     }
     else {
         cout << "0" << endl;
@@ -52,5 +53,5 @@ void Menu::redo() {
     if(history_index + 1 < history.size()) {
         ++history_index;
     }
-    history.at(history_index)->execute();
+    //history.at(history_index)->execute();
 }
